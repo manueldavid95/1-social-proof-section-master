@@ -1,0 +1,158 @@
+/* 
+    1.  Posicionamiento (Positioning)
+    2.  Modelo De Caja (Box-model)
+    3.  Tipografía (Typography)
+    4.  Visual (Visual)
+    5.  Misc (Misc)
+*/
+
+/* variables */
+:root {
+    /* ## PRIMARIOS ## */
+    --Very-Dark-Magenta: hsl(300, 43%, 22%);
+    --Soft-Pink: hsl(333, 80%, 67%);
+
+    /* ## NEUTRAL ## */
+    --Dark-Grayish-Magenta: hsl(303, 10%, 53%);
+    --Light-Grayish-Magenta: hsl(300, 24%, 96%);
+    --White: hsl(0, 0%, 100%);
+}
+
+html { 
+    box-sizing: border-box; 
+    font-size: 62.5%; /* 1rem = 10px */
+} 
+   
+*, *:before, *:after { 
+    box-sizing: inherit; 
+}
+
+body {
+    font-family: 'Spartan', sans-serif;
+    font-size: 1.5rem; /* 15px */
+    background: url(../images/bg-pattern-top-desktop.svg) no-repeat top left, url(../images/bg-pattern-bottom-desktop.svg) no-repeat bottom right;
+    min-height: 100vh;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
+
+.container {
+    width: 90%;
+    max-width: 98.6rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.seccion-header {
+    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.seccion-header-textos h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--Very-Dark-Magenta);
+}
+
+.seccion-header-textos p {
+    color: var(--Dark-Grayish-Magenta);
+}
+
+.seccion-header-estados {
+    flex: 1 1 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.estados {
+    width: 100%;
+    max-width: 40rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--Light-Grayish-Magenta);
+    border-radius: 1.5rem;
+}
+
+.estados:nth-child(1) {
+    align-self: flex-start;
+}
+
+.estados:nth-child(2) {
+    align-self: center;
+}
+
+.estados:nth-child(3) {
+    align-self: flex-end;
+}
+
+/* seccion tarjetas */
+.seccion-tarjetas {
+    min-height: 50rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.tarjeta {
+    flex: 1 1 31rem;
+    padding: 3rem;
+    background-color: var(--Very-Dark-Magenta);
+    border-radius: 1rem;
+}
+
+.tarjeta:nth-child(1) {
+    align-self: flex-start;
+}
+
+.tarjeta:nth-child(2) {
+    align-self: center;
+}
+
+.tarjeta:nth-child(3) {
+    align-self: flex-end;
+}
+
+.tarjeta-perfil {
+    display: flex;
+    gap: 1rem;
+}
+
+.tarjeta-perfil img {
+    border-radius: 50%;
+}
+
+.tarjeta-perfil-textos {
+    color: var(--White);
+}
+
+.tarjeta-perfil-textos p {
+    color: var(--Soft-Pink);
+}
+
+.tarjeta-p {
+    color: var(--White);
+}
+
+@media (max-width: 768px) {
+    .seccion-header {
+        grid-template-columns: 1fr;
+    }
+    .estados {
+        flex-direction: column;
+        align-items: center;
+    }
+}
